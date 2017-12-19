@@ -108,7 +108,8 @@ open class CircularSpinner: UIView {
             appearanceProgressLayer()
         }
     }
-    
+    open static var mainViewBgColor = UIColor.white.withAlphaComponent(0.9)
+    open static var titleLabelColor = UIColor(red: 111.0/255, green: 111.0/255, blue: 111.0/255, alpha: 1)
     
     // MARK: - view lifecycle
     public override init(frame: CGRect) {
@@ -129,6 +130,8 @@ open class CircularSpinner: UIView {
         mainView = loadViewFromNib()
         mainView.frame = bounds
         mainView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        mainView.backgroundColor = CircularSpinner.mainViewBgColor
+        titleLabel.textColor = CircularSpinner.titleLabelColor
         addSubview(mainView)
     }
     
